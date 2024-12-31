@@ -1,0 +1,74 @@
+[gd_scene load_steps=15 format=4 uid="uid://debtpj4jvlne2"]
+
+[ext_resource type="Script" path="res://systems/game.gd" id="1_5wswp"]
+[ext_resource type="Texture2D" uid="uid://cp5dj2e8errx8" path="res://sprites/fungi.png" id="2_lc2tl"]
+[ext_resource type="Script" path="res://tagged.gd" id="2_uy6aw"]
+[ext_resource type="Texture2D" uid="uid://dms0257klpc2n" path="res://icon.svg" id="3_qt67q"]
+[ext_resource type="Script" path="res://systems/queue.gd" id="3_yp3qe"]
+[ext_resource type="Script" path="res://systems/move.gd" id="4_d7kg6"]
+[ext_resource type="Texture2D" uid="uid://briinwb1f0o73" path="res://path_marker.png" id="7_tyktg"]
+
+[sub_resource type="Resource" id="Resource_8rcag"]
+script = ExtResource("3_yp3qe")
+curr = Array[ExtResource("2_uy6aw")]([])
+
+[sub_resource type="Resource" id="Resource_qpnar"]
+script = ExtResource("4_d7kg6")
+pos = Vector2i(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmnhp"]
+size = Vector2(1150, 648)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ac6ul"]
+texture = ExtResource("2_lc2tl")
+texture_region_size = Vector2i(100, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oqjlk"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(100, 70)
+sources/0 = SubResource("TileSetAtlasSource_ac6ul")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vx081"]
+texture = ExtResource("7_tyktg")
+texture_region_size = Vector2i(16, 12)
+use_texture_padding = false
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wlulj"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(100, 70)
+sources/0 = SubResource("TileSetAtlasSource_vx081")
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("world", "entity", "path_marker")]
+script = ExtResource("1_5wswp")
+world = NodePath("WorldArea/World")
+entity = NodePath("WorldArea/World/Sprite2D")
+path_marker = NodePath("WorldArea/World/PathMarker")
+queue = SubResource("Resource_8rcag")
+move = SubResource("Resource_qpnar")
+tick_duration = 0.5
+
+[node name="WorldArea" type="Area2D" parent="."]
+
+[node name="WorldAreaShape" type="CollisionShape2D" parent="WorldArea"]
+position = Vector2(575, 324)
+shape = SubResource("RectangleShape2D_wmnhp")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="World" type="TileMapLayer" parent="WorldArea"]
+position = Vector2(543, 323)
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD///7/AAAAAAAAAAD+////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAABAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAD///z/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD9////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAPz/AAAAAAAAAAABAP3/AAAAAAAAAAABAP//AAAAAAAAAAACAP7/AAAAAAAAAAD9//7/AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAACAP//AAAAAAAAAAD//wUAAAAAAAAAAAABAPv/AAAAAAAAAAACAPz/AAAAAAAAAAACAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAP7/AAAAAAAAAAD///3/AAAAAAAAAAAAAPz/AAAAAAAAAAAAAPv/AAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAIAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAACAAQAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAP//AAAAAAAAAAAEAP7/AAAAAAAAAAADAP3/AAAAAAAAAAD9/wIAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wAAAAAAAAAAAAD8////AAAAAAAAAAD8//7/AAAAAAAAAAD9/wMAAAAAAAAAAAD+/wQAAAAAAAAAAAD//wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD+/wUAAAAAAAAAAAD9/wUAAAAAAAAAAAD9/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD8/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9//3/AAAAAAAAAAD9//z/AAAAAAAAAAD+//z/AAAAAAAAAAD///v/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAAAAAADAPz/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAACAPv/AAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD5/wAAAAAAAAAAAAD6////AAAAAAAAAAD7//7/AAAAAAAAAAD8//3/AAAAAAAAAAD+//v/AAAAAAAAAAD///r/AAAAAAAAAAAAAPr/AAAAAAAAAAAAAPn/AAAAAAAAAAABAPr/AAAAAAAAAAD//wcAAAAAAAAAAAD5/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAAGAAAAAAAAAAAAAAAEAPz/AAAAAAAAAAADAPv/AAAAAAAAAAACAPr/AAAAAAAAAAABAPn/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_oqjlk")
+
+[node name="Sprite2D" type="Sprite2D" parent="WorldArea/World"]
+position = Vector2(53, 38)
+scale = Vector2(0.275209, 0.275209)
+texture = ExtResource("3_qt67q")
+
+[node name="PathMarker" type="TileMapLayer" parent="WorldArea/World"]
+tile_set = SubResource("TileSet_wlulj")
+
+[connection signal="input_event" from="WorldArea" to="." method="_on_world_area_input"]
