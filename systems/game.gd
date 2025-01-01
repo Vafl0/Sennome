@@ -4,8 +4,8 @@ class_name Game extends Node2D
 @export var entity : Node2D
 @export var path_marker : TileMapLayer
 
-@export var queue : Queue
-@export var move : Move
+@export var queue : Queue = Queue.new()
+@export var move : Move = Move.new()
 
 @export var tick_duration: float
 
