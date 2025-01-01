@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://briinwb1f0o73"
-path="res://.godot/imported/path_marker.png-9f4eb3e9985056ab2f67b92d1952bb62.ctex"
+uid="uid://ccvoasy3qf75q"
+path="res://.godot/imported/path_marker.png-e09ea216e90b70fb5ef59c7fec003784.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://path_marker.png"
-dest_files=["res://.godot/imported/path_marker.png-9f4eb3e9985056ab2f67b92d1952bb62.ctex"]
+source_file="res://Sprites/path_marker.png"
+dest_files=["res://.godot/imported/path_marker.png-e09ea216e90b70fb5ef59c7fec003784.ctex"]
 
 [params]
 

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dms0257klpc2n" path="res://icon.svg" id="3_qt67q"]
 [ext_resource type="Script" path="res://systems/queue.gd" id="3_yp3qe"]
 [ext_resource type="Script" path="res://systems/move.gd" id="4_d7kg6"]
-[ext_resource type="Texture2D" uid="uid://briinwb1f0o73" path="res://path_marker.png" id="7_tyktg"]
+[ext_resource type="Texture2D" uid="uid://ccvoasy3qf75q" path="res://Sprites/path_marker.png" id="7_tyktg"]
 
 [sub_resource type="Resource" id="Resource_8rcag"]
 script = ExtResource("3_yp3qe")
