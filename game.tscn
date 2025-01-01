@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=4 uid="uid://debtpj4jvlne2"]
 
 [ext_resource type="Script" path="res://systems/game.gd" id="1_5wswp"]
-[ext_resource type="Texture2D" uid="uid://cp5dj2e8errx8" path="res://sprites/fungi.png" id="2_lc2tl"]
+[ext_resource type="Texture2D" uid="uid://bdrh507j647lq" path="res://Sprites/fungi.png" id="2_lc2tl"]
 [ext_resource type="Script" path="res://tagged.gd" id="2_uy6aw"]
 [ext_resource type="Texture2D" uid="uid://dms0257klpc2n" path="res://icon.svg" id="3_qt67q"]
 [ext_resource type="Script" path="res://systems/queue.gd" id="3_yp3qe"]

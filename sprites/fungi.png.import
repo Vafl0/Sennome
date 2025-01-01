@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp5dj2e8errx8"
-path="res://.godot/imported/fungi.png-a2c0daa0173c04b20c0ad5a2a5da1447.ctex"
+uid="uid://bdrh507j647lq"
+path="res://.godot/imported/fungi.png-b462374830191f81f5ce3f43f48a12cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/fungi.png"
-dest_files=["res://.godot/imported/fungi.png-a2c0daa0173c04b20c0ad5a2a5da1447.ctex"]
+source_file="res://Sprites/fungi.png"
+dest_files=["res://.godot/imported/fungi.png-b462374830191f81f5ce3f43f48a12cb.ctex"]
 
 [params]
 
